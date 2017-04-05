@@ -6,7 +6,7 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 20:13:34 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/05 20:19:12 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/05 20:33:26 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,6 @@ typedef struct	s_mlx
 	void		*ptr;
 	void		*win;
 	t_img		img;
-}
+}				t_mlx;
 
 #endif
