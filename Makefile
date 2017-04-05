@@ -12,7 +12,8 @@
 
 NAME = perlin
 
-SRC = perlin.c
+SRC = perlin.c \
+	  tools.c
 
 OBJ = $(SRC:.c=.o)
 
