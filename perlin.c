@@ -6,7 +6,7 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 20:13:25 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/07 17:05:27 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:12:47 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_init_perlin(t_env *env)
 {
-	env->p.gain = 0.65;
+	env->p.gain = 0.75;
 	env->p.octaves = 8;
 	env->p.height = WIN_HEIGHT;
 }

@@ -6,7 +6,7 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 22:59:51 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/07 17:07:08 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:13:12 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	ft_set_partern(int keycode, t_env *env)
 	else if (keycode == 84)
 		env->p.octaves++;
 	else if (keycode == 86)
-		env->p.gain = env->p.gain <= 0.1 ? 0.1 : env->p.gain - 0.1;
+		env->p.gain = env->p.gain <= 0.1 ? 0.1 : env->p.gain - 0.05;
 	else if (keycode == 87)
-		env->p.gain += 0.1;
+		env->p.gain += 0.05;
 	else if (keycode == 89)
 		env->p.height = env->p.height <= 50 ? 50 : env->p.height - 50;
 	else if (keycode == 91)
