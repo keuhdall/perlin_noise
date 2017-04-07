@@ -6,7 +6,7 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 22:59:51 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/07 16:59:00 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:07:08 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ int	ft_set_partern(int keycode, t_env *env)
 		env->patern = 2;
 	else if (keycode == 20)
 		env->patern = 3;
-	else if (keycode == 21)
-		env->patern = 4;
 	else if (keycode == 53)
 		exit(1);
 	else if (keycode == 83)

@@ -6,7 +6,7 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 20:13:34 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/07 16:32:43 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:08:39 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,7 @@ typedef struct	s_env
 
 int				ft_exit(void);
 double			ft_noise(int x, int y);
-//double			ft_perlin(int x, int y, double persistance, int octaves);
-float			perlin_two(float x, float y, t_env *env);
+float			ft_perlin(float x, float y, t_env *env);
 void			ft_draw(t_env *env);
 int				ft_set_partern(int keycode, t_env *env);
 

@@ -6,7 +6,7 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 23:05:30 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/07 17:04:02 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:08:55 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,11 @@ void		ft_draw_patern(int x, int y, t_env *env)
 			((((int)(((ft_noise(x, y) + 1) / 2) * 255) & 0xFF)))));
 	}
 	else if (env->patern == 3)
-		env->mlx.img.data[y * 800 + x] = 0xFFFFFF *
-				perlin_two(x, y, env);
-	else if (env->patern == 4)
 	{
 		env->mlx.img.data[y * 800 + x] =
-			((((int)(((perlin_two(x, y, env) + 1) / 2) * 255) & 0xFF) << 16) +
-			((((int)(((perlin_two(x, y, env) + 1) / 2) * 255) & 0xFF) << 8) +
-			((((int)(((perlin_two(x, y, env) + 1) / 2) * 255) & 0xFF)))));
+			((((int)(((ft_perlin(x, y, env) + 1) / 2) * 255) & 0xFF) << 16) +
+			((((int)(((ft_perlin(x, y, env) + 1) / 2) * 255) & 0xFF) << 8) +
+			((((int)(((ft_perlin(x, y, env) + 1) / 2) * 255) & 0xFF)))));
 	}
 }
 
