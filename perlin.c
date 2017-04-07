@@ -6,31 +6,40 @@
 /*   By: lmarques <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 20:13:25 by lmarques          #+#    #+#             */
-/*   Updated: 2017/04/05 23:19:06 by lmarques         ###   ########.fr       */
+/*   Updated: 2017/04/07 17:05:27 by lmarques         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "perlin.h"
 
-void	ft_init_struct(t_mlx *mlx)
+void	ft_init_perlin(t_env *env)
 {
-	mlx->ptr = mlx_init();
-	mlx->win = mlx_new_window(mlx->ptr, 800, 600, "perlin");
-	mlx->img.img_ptr = mlx_new_image(mlx->ptr, 800, 600);
-	mlx->img.data = (int *)mlx_get_data_addr(mlx->img.img_ptr, &mlx->img.bpp,
-		&mlx->img.size_line, &mlx->img.endian);
-	mlx->patern = 1;
+	env->p.gain = 0.65;
+	env->p.octaves = 8;
+	env->p.height = WIN_HEIGHT;
+}
+
+void	ft_init_struct(t_env *env)
+{
+	env->mlx.ptr = mlx_init();
+	env->mlx.win = mlx_new_window(env->mlx.ptr, 800, 600, "perlin");
+	env->mlx.img.img_ptr = mlx_new_image(env->mlx.ptr, 800, 600);
+	env->mlx.img.data = (int *)mlx_get_data_addr(env->mlx.img.img_ptr,
+		&env->mlx.img.bpp, &env->mlx.img.size_line, &env->mlx.img.endian);
+	env->patern = 1;
 }
 
 int		main(void)
 {
-	t_mlx	mlx;
+	t_env		env;
 
-	ft_init_struct(&mlx);
-	ft_draw(&mlx);
-	mlx_put_image_to_window(mlx.ptr, mlx.win, mlx.img.img_ptr, 0, 0);
-	mlx_key_hook(mlx.win, &ft_set_partern, &mlx);
-	mlx_hook(mlx.win, 17, (1L << 17), &ft_exit, 0);
-	mlx_loop(mlx.ptr);
+	ft_init_struct(&env);
+	ft_init_perlin(&env);
+	ft_draw(&env);
+	mlx_put_image_to_window(env.mlx.ptr, env.mlx.win,
+		env.mlx.img.img_ptr, 0, 0);
+	mlx_key_hook(env.mlx.win, &ft_set_partern, &env);
+	mlx_hook(env.mlx.win, 17, (1L << 17), &ft_exit, 0);
+	mlx_loop(env.mlx.ptr);
 	return (0);
 }
